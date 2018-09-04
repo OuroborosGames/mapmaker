@@ -197,8 +197,8 @@ At the time when expedition begins:
 	
 Table of Footnotes (continued)
 Name	Note
-wave-merchant	"As it was not a University ship, the fact that it had a name indicated that it was built before the white plague."
-vevvas	"A port far to the south, on the edge of the Seid Desert."
+wave-merchant	"<%= @merchant %>"
+vevvas	"<%= @vevvas %>"
 
 
 Chapter 3 - Noninsula
