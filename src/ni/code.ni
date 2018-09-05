@@ -216,14 +216,14 @@ Cartography rules is a rulebook. After going to unknown place, follow the cartog
 A cartography rule:
 	if the player is in wilderness:
 		if the terrain type of location of the player is "unknown":
-			say "I moved to an uncharted location and started to fill in the map with details about it.";
-			now the current question is "What did I put on the map?";
+			say "<%= @unknown_location %>";
+			now the current question is "<%= @location_question %>";
 			now current question menu is {"Field", "Forest", "Hill", "Mountain", "Lake", "Desert"};
 			ask a closed question, in menu mode;
 	if the player is in Aeripolis:
 		if the terrain type of location of the player is "unknown":
-			say "In the distance, I saw a collection of shapes which seemed too regular and orderly to be created by nature. I walked towards it and as I moved closer, my suspicion was confirmed: they were buildings. I passed a town sign with the word 'Aeripolis' written on it.";
-			now the current question is "The town was...";
+			say "<%= @unknown_aeripolis %>";
+			now the current question is "<%= @aeripolis_question %>";
 			now current question menu is {"...friendly", "...hostile", "...abandoned"};
 			ask a closed question, in menu mode.
 			
@@ -234,7 +234,7 @@ After going from wilderness to Coast of Noninsula:
 	ask a closed question, in menu mode.
 
 A menu question rule:
-	if the current question is "What did I put on the map?":
+	if the current question is "<%= @location_question %>":
 		choose row the number understood in Table of Mapped Terrain;
 		now the count entry is the count entry + 1;
 		now the terrain type of location of player is the terrain type entry;
@@ -247,7 +247,7 @@ A menu question rule:
 		now the description of location of player is value entry;
 		choose row with a terrain type of "unknown" in Table of Mapped Terrain;
 		now the count entry is the count entry - 1;
-	if the current question is "The town was...":
+	if the current question is "<%= @aeripolis_question %>":
 		choose row the number understood in Table of Aeripolis;
 		now the terrain type of location of the player is the terrain type entry;
 		say "[line break][line break][town description entry]";
