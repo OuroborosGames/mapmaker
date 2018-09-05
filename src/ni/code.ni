@@ -229,7 +229,7 @@ A cartography rule:
 			
 After going from wilderness to Coast of Noninsula:
 	[ Returning to the coast allows us to go back to the mainland. This is allowed even if we didn't explore anything - in fact, the 'No Island' ending depends on the unexplored territory being more common than any other type of terrain. ]
-	now the current question is "I was back at the coast.";
+	now the current question is "<%= @coast_question %>";
 	now the current question menu is {"I waited for the ship back home.", "I looked at the Vast Sea."};
 	ask a closed question, in menu mode.
 
@@ -252,19 +252,16 @@ A menu question rule:
 		now the terrain type of location of the player is the terrain type entry;
 		say "[line break][line break][town description entry]";
 		now the description of location of the player is the town description entry;
-	if the current question is "I was back at the coast.":
+	if the current question is "<%= @coast_question %>":
 		if the number understood is 1:
-			say "[line break][line break]My journey back home on [italic type]The Merchant of the Waves[roman type] was much easier than going the other way. Even the austere conditions on board of the ship felt like a return to civilization after spending so much time in the wilderness of Noninsula, and the captain was kind enough to allow me and his crew to appropriate a portion of the cargo. This meant that I was able to fight my seasickness with a few bottles of nalanc[note nalanc] and an occasional Vevvasian Incense.";
+			say "<%= @returning_home %>";
 			move player to Cafe Campus.
 		
-Instead of examining in the wilderness, say "I didn't have time for such details, I had to explore as much of the island as possible before [italic type]The Merchant of the Waves[roman type] returns.". 
+Instead of examining in the wilderness, say "<%= @wilderness_examine %>". 
 
 Exploration is a scene. Exploration begins when player is in Island of Noninsula. Exploration ends when player is not in Island of Noninsula.
 
-Table of Footnotes (continued)
-Name	Note
-nalanc	"A strong alcoholic drink which used to be made in Orseid. Sadly, it seems that the secret of its production has been lost after the Fall of Seid[note fall-of-seid]."
-fall-of-seid	"The last large-scale outbreak of the white plague. It is suspected that the disease was brought in by an Urlanese merchant who visited during the 1868 Soltice Market, and by 1871 the nations of Orseid, Urseid and Nuvva were almost wiped out."
+<%= @footnote_table_2 %>
 
 Section 2 - Data-driven dynamic geography
 
