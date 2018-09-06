@@ -283,13 +283,13 @@ Terrain Type	Count	Descriptions	Desolation	Danger
 Section 3 - Static Geography
 
 [ entrypoint ]
-Coast of Noninsula is a room. "I stood on a small strip of sand which seemed to be the only thing on the island that could be classified as a beach: the rest of the coast consisted of terrifyingly high vertical cliffs. To the north, there seemed to be a path going gradually upwards, possibly allowing me to access higher ground. Through thick fog, I could see that it splits into three different roads - one going straight ahead and others diverging towards east and west.".
+Coast of Noninsula is a room. "<%= @coast_looktext %>".
 
 [ south ]
 South Noninsula is an unknown place. South Noninsula is north of Coast of Noninsula.  Southwest Noninsula is an unknown place. Southwest Noninsula is northwest of Coast of Noninsula and west of South Noninsula. Southeast Noninsula is an unknown place. Southeast Noninsula is northeast of Coast of Noninsula and east of South Noninsula.
 
 [ center ]
-Central Noninsula is an unknown place. Central Noninsula is north of South Noninsula, northwest of Southeast Noninsula and northeast of Southwest Noninsula. West Noninsula is an unknown place. It is northwest of South Noninsula and north of Southwest Noninsula. East Noninsula is an unknown place. It is northeast of South Noninsula, north of Southeast Noninsula and east of Central Noninsula. Aeripolis is an unknown place. Aeripolis is east of West Noninsula and west of Central Noninsula. Copper mine is a room. "I followed the road  north, to the outskirts of Aeripolis. It led me to an artificial hole in the ground, wide and deep like a small lake. There was no doubt that this was the place where copper was mined". It is north of Aeripolis.
+Central Noninsula is an unknown place. Central Noninsula is north of South Noninsula, northwest of Southeast Noninsula and northeast of Southwest Noninsula. West Noninsula is an unknown place. It is northwest of South Noninsula and north of Southwest Noninsula. East Noninsula is an unknown place. It is northeast of South Noninsula, north of Southeast Noninsula and east of Central Noninsula. Aeripolis is an unknown place. Aeripolis is east of West Noninsula and west of Central Noninsula. Copper mine is a room. "<%= @mine_looktext %>". It is north of Aeripolis.
 
 [ north ]
 North Noninsula is an unknown place. It is north of Central Noninsula, northwest of East Noninsula and northeast of West Noninsula. Northwest Noninsula is an unknown place. It is north of West Noninsula, west of North Noninsula and northwest of Central Noninsula. Northeast Noninsula is an unknown place. It is north of East Noninsula, east of North Noninsula and northeast of Central Noninsula.
@@ -302,14 +302,14 @@ Inhabited area is a region. Aeripolis and Copper mine are parts of inhabited are
 
 The island of Noninsula is a region. The wilderness and inhabited are parts of the island of Noninsula.
 
-Instead of sleeping in the Island of Noninsula, say "It wasn't time to rest."
+Instead of sleeping in the Island of Noninsula, say "<%= @island_sleep %>"
 
 [ Mine-specific items ]
-Stairs are a thing.  "Crude stone stairs were built by the miners to allow reaching the bottom of the pit.". Description of stairs is "Crude stone stairs." Understand "stone stairs "as stairs.
+Stairs are a thing.  "<%= @stairs_looktext %>". Description of stairs is "Crude stone stairs." Understand "stone stairs "as stairs.
 
-Furnace is a thing. "Near the top of the stairs was a large brick furnace used for extracting the metal from its ore." Description of furnace is "A furnace used for smelting copper.". Furnace is fixed in place. Understand "smelter" as furnace. Furnace is in copper mine.
+Furnace is a thing. "<%= @furnace_looktext %>" Description of furnace is "<%= @furnace_description %>". Furnace is fixed in place. Understand "smelter" as furnace. Furnace is in copper mine.
 
-Piece of copper is a thing. "On the ground, I saw a small, conical piece of copper." Description of piece of copper is "An unusually heavy copper cone." Before taking piece of copper, say "I picked up a small piece of copper from the ground. I was surprised with how heavy it was (should such thing even be possible?). I decided to take it with me to the University, despite considerable effort that came with carrying it all the way to the coast.". Understand "copper piece", "copper cone", "conical piece of copper" and "cone" as piece of copper. Piece of copper is in the copper mine.
+Piece of copper is a thing. "<%= @copper_looktext %>" Description of piece of copper is "<%= @copper_description %>" Before taking piece of copper, say "<%= @take_copper %>". Understand "copper piece", "copper cone", "conical piece of copper" and "cone" as piece of copper. Piece of copper is in the copper mine.
 
 Chapter 4 - Endings
 
