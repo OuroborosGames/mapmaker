@@ -341,36 +341,19 @@ Section 2 - Ending A1 - No Island
 
 No Island is a scene. No Island begins when ending picker ends inconclusively. No Island ends when the player has been in campus cafe for more than 1 turn.
 
-When No Island begins:
-	say "[italic type]Mind Voyager[roman type] returned from its journey after two weeks. Given that it was much slower than [italic type]Merchant of the Waves[roman type], the short duration of the expedition was rather surprising. More surprising was the story told by the travellers: apparently, they were unable to locate the island. Constantia Wright cursed their incompetence and sent a smaller ship, this time staffed only by the geographers specializing in navigation.
-
-	Once again, the travellers returned with empty hands. Rector decided to send in yet another expedition just to be sure, but the results were predictable: the only thing they found was water.
-
-	Of course, I was the next person to face her anger. I was accused of fabricating the results of my research and threatened with expulsion. I defended myself by mentioning the captain and the crew of [italic type]Merchant of the Waves[roman type] who brought me to and from the island. Unable to paint us all as liars and unwilling to admit to the flaws in her philosophy, she sent us to the Institute of the Animate for a medical examination. The University doctors decided that we suffered from collective hallucinations caused by a combination of autosuggestion, poisoning by spoiled food rations, chronic alcohol abuse and the overdose of Vevvasian Incense. I was forced to go through a few pointless therapy session, given an official reprimand for my lack of scientific rigor and placed on a month-long unpaid leave.
-
-	It wasn't all for nothing though. Most of the doctors knew that the diagnosis they made was just an attempt to sweep the nature of our reality under the rug. This undermined Wright's authority and guaranteed that the schools of thought she fought against would survive. As time went by, the concept of democratic reality became an unofficial basis for the medical theories put forward by the Institute of the Inanimate, and the plague mysticism gained some popularity among students who founded a secret Brotherhood of Noninsula Seekers.".
+<%= @endingA1 %>
 
 Section 3 - Ending A2 - Noninsula Copper Company
 
 Noninsula Copper Company is a scene. Noninsula Copper Company begins when ending picker ends happily. Noninsula Copper Company ends when the player has been in campus cafe for more than 1 turn.
 
-When Noninsula Copper Company begins:
-	say "The expedition was a great success. After a few months of studies, it turned out that the area can solve our country's copper problems completely, and thus the government established Noninsula Copper Company. Of course, all the glory went to the higher-ups at the Institute of the Inanimate as rector Wright decided to use this situation as an opportunity to create a legend about the exceptional wisdom of our professors. Still, I got a decent paycheck from that and I was allowed to abandon the boring studies of coal mining to write a doctoral dissertation about the unusual geographic features of Noninsula.
-
-	When it comes to the political struggels inside the University itself, the Noninsula expeditions became a common argument in favor of Constantia Wright's leadership. Institute of the Inanimate proceeded with their electrification efforts, and even if they never managed to go beyond the University itself and a few of the largest cities, they managed to expand the rector's vision for the future from rebuilding the world to making it better than it was before the plague. In hindsight, it didn't quite work out, but that idea is still alive in the University.
-
-	Still, as I was sitting in Cafe Campus, I couldn't help but wonder why did professor Lapis give me that map. After Noninsula Copper Company became a thing, interest in the occult experimentation has declined drastically. Did he sacrifice what was left of the plague mystic school of thought to help his former students? Did he know that the time of plague mystics has ended and decided to ensure that there's a place for us in this new University? Or maybe he strategically supported Wright so that there will be no place at the University for the democratic realists and their bookburning ambitions.".
+<%= @endingA2 %>
 
 Section 4 - Ending A3 - Coal Not Copper
 
 Coal Not Copper is a scene. Coal Not Copper begins when ending picker ends sadly. Coal Not Copper ends when the player has been in campus cafe for more than 1 turn.
 
-When Coal Not Copper begins:
-	say "After [italic type]Mind Voyager[roman type] returned, many reports and analyses were written and even more debates were held. After we turned our knowledge of Noninsula into as many raw numbers as possible, our work was handed to the Institute of the Societal and its economists.
-
-	The economists did not spend as much time on the details as we did. In fact, after less than one week they have gave us their calculation: due to Noninsula's difficult terrain, the costs related to mining, extracting and transporting the copper would be an order of magnitude greater than the possible profits. Noninsula was put on the maps with an annotation describing its copper deposits and unusual geography, but nothing more was done with it as the University had more important work to do.
-
-	The Noninsula expeditions were a failure, but they were a failure for which the University was prepared. As time went by, everything went back to normal and I was reassigned to writing about coal mining in Dusty Mountains. After the eventful journey and hopeful return, the excitement has disappointingly faded and everything - the island, plague mystics, democratic realists, my scholarly ambitions - was dissolved in the boring practicality of everyday work. Constantia Wright's victory was entirely consistent with her worldview - quiet, grounded and inevitable.".
+<%= @endingA3 %>
 
 Section 5 - Endings B
 
