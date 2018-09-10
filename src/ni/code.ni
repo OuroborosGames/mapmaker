@@ -361,53 +361,15 @@ Post-Ending is a scene. Post-Ending begins when No Island ends. Post-Ending begi
 	try silently opening the cafe door;
 	move professor Lapis to Campus Cafe;
 	try silently closing the cafe door;
-	say "My train of thought was interrupted by professor Lapis. I didn't even notice as he entered the cafe and sat at my table with a small cup of strong coffee. We exchanged greetings, and started talking about my journey to Noninsula.".
+	say "<%= @post_end %>".
 
 [ Ending B1 - New Island ]	
-Post-Ending ends when professor Lapis carries a piece of copper. When Post-Ending ends:
-	say "I showed professor Lapis the strangely heavy piece of copper that I found in the Aeripolis mine. He took it in his hands, looked at it from all sides, noticed its unusual weight. He went quiet for an uncomfortably long period of time. I considered breaking the silence but couldn't bring myself to do it.
-
-	When he spoke again, he told me the truth: the Noninsula expedition was his final experiment, and his last stand against the politics that led to him losing his position. He falsified the map (the original showed a common Vast Sea route to the Western Colonies), adding an island that the University wanted to exist. Noninsula didn't exist before he drew it (or maybe before I went there). The plan was to create an island that would be of interest to the University - adding a piece of plague mysticism to Constantia Wright's attempts at rebuilding the old world.
-
-	The copper cone could have been his argument that the world worked according to his theories (although the same could have probably been said by the adherents of the democratic reality school), but it ended up being something else. He admitted that he didn't really understand it, and while he didn't admit that he was afraid of it, it was quite obvious that he was. He finished his coffee, said that the copper cone will lead him to a new, better theory and left. I never saw him again, and neither did anyone else from the University.
-
-	What I did see was the slow but unavoidable change in the world. I now see that the plague was just the beginning, and that the reality as we know it is either falling apart or mutating beyond our recognition. People at the University still won't admit that, and they will say that the whole plague mysticism drove me to insanity - but deep inside, they know it too. There is chaos ahead of us, and we don't know how to fight it or control it. Maybe we can't. Maybe we can't even survive it.";
-	end the story finally. 
+<%= @endingB1 %>
 
 After asking the professor about a topic listed in the Table of Second Conversation in Cafe Campus, say reply entry instead.
 
 Instead of asking professor Lapis about "piece of copper", try silently giving a piece of copper to professor Lapis. Instead of asking professor Lapis about "copper piece", try silently giving a piece of copper to professor Lapis. Instead of asking professor Lapis about "copper cone", try silently giving a piece of copper to professor Lapis. Instead of asking professor Lapis about "conical piece of copper", try silently giving a piece of copper to professor Lapis. The block giving rule is not listed in the check giving it to rules.
 
-After asking professor Lapis about something in Cafe Campus for the fifth time:
-	if asking professor Lapis about a topic listed in the Table of Second Conversation:
-		say reply entry;
-	say "After professor Lapis finished his coffee and I finished my tea, we left the Cafe Campus and each of us went his own way. I don't know where did my former mentor go, and neither does anyone at the University. Years later, I still don't know the meaning of the words he said before going through the University Gate for the last time:[line break][line break]";
-	if desolation is greater than 21 and danger is greater than 21:
-		[ Ending B2 - A Bad Place ]
-		say "[quotation mark]That place you've created, it seems evil. I don't think we belong there. Is that how you see our world? You may be right, but I'm not going to give up just yet.[quotation mark]";
-	otherwise if desolation is greater than 25:
-		[ Ending B3 - Beautiful Void ]
-		say "[quotation mark]You have made Noninsula into a void. I understand that, I dislike people too. Maybe I will become a hermit and continue my studies without seeking recognition. You should consider that too, or else this University will eat your soul.[quotation mark]";
-	otherwise if danger is greater than 25:
-		[ Ending B4 - Adventure ]
-		say "[quotation mark]Any other geographer would make Noninsula into a boring piece of land with some unusual rock formation, or something like that. You gave it personality. I don't think that endleslly typing away words about coal or copper is the life for you. You have a spirit of an adventurer, and the world is becoming a good place for adventurers.[quotation mark]";
-	otherwise if desolation is less than 5:
-		[ Ending B5 - No Rest For The Mystic ]
-		say "[quotation mark]It is quite crowded on that island of yours. All the animals and people and no place to rest or hide. You should learn to appreciate emptiness.[quotation mark]";
-	otherwise if danger is less than 5:
-		[ Ending B6 - An Island ]
-		say "[quotation mark]I didn't really expect you to make Noninsula so boring. I think the University life has affected you so much that you just can't imagine there being any other way. I think you should leave this place before it's too late. You don't want to become the next Constantia Wright, do you?[quotation mark]";
-	otherwise:
-		[ Ending B7 - Good Island ]
-		say "[quotation mark]Your island is quite a beautiful place. Maybe not exciting, but I wouldn't mind living there. If you're going to help the University rebuild the world, make sure that it ends up looking a bit like that.[quotation mark]";
-	end the story finally. 
+<%= @endingsB2_7 %>
 
-Table of Second Conversation
-Topic	Reply
-"map" or "map of Noninsula"	"I showed my former mentor the map of Noninsula - now filled in with the details I discovered during my journey. He looked at it, smiled and told me that he wasn't sure if this will work, but he's glad that it did."
-"Noninsula" or "island"	"I described the island to professor Lapis. He listened carefully and seemed fascinated by it. Was he such a good actor or did he for some reason become interested in completely mundane, non-occult geography? I didn't know."
-"journey" or "expedition"	"I told professor Lapis about my seasickness, the hardships of exploring the island, the joy of discovery. He appreciated the adventure, and said that now that he was free of the University-related responsibilities, he might try travelling just to see the world beyond the declining cities and dying schools."
-"Merchant of the Waves" or "wave merchant" or "ship"	"We talked about my travels on a clipper ship - the difficulty of leaving home, the relief of returning, the contrast between the living conditions and the expensive cargo bought in Vevvas."
-"Aeripolis"	"Professor Lapis was especially interested in the mining town of Aeripolis, and the people who lived there. He was disappointed in how little details I could provide, and hoped that the Institute of the Societal would study the Noninsulan society."
-"tea" or "coffee" or "Cafe Campus"	"We shared our appreciation for Cafe Campus. My former mentor admitted that of all the things he could find on the University grounds, good coffee would be the one he will miss the most."
-"brotherhood" or "seekers" or "Brotherhood of Noninsula Seekers"	"I told the professor about the Brotherhood of Noninsula Seekers, a small secret society formed by the students with interest in the philosophy of plague mystics. He was intrigued, but pessimistic - he predicted that the group will degenerate into a pretentious club for rich students who disguise their abuse of alcohol as something deeper."
+<%= @conversation_table_2 %>
