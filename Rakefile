@@ -28,9 +28,9 @@ file STORY_NI => ['intermediates/The New Mapmaker.inform/Source'] do
   
   File.write(STORY_NI, ERB.new(template).result)
 
-  end
-  
-  CLEAN.include('intermediates/')
-  CLOBBER.include('intermediates/', 'out/')
-  
-  task :default => [STORY_NI]
+end
+
+CLEAN.include('intermediates/')
+CLOBBER.include('intermediates/', 'out/')
+
+task :default => [STORY_NI]
