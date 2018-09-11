@@ -12,6 +12,7 @@ STORY_NI = INFORMDIR + '/Source/story.ni'
 WIN_I7_BASE = "\"D:/Program Files (x86)/Inform 7"
 WIN_I7_INTERNAL = WIN_I7_BASE + "/Internal\""
 WIN_NI = WIN_I7_BASE + "/Compilers/ni\""
+WIN_I6 = WIN_I7_BASE + "/Compilers/inform6\""
 
 directory 'intermediates'
 directory MATERIALDIR
@@ -43,7 +44,11 @@ task :ni => [INDEXDIR, MATERIALDIR, STORY_NI] do
   sh WIN_NI + " -release -internal " + WIN_I7_INTERNAL + " -project " + INFORMDIR + " -format=ulx"
 end
 
+task :i6 => :ni do
+  sh WIN_I6 + " -w~S~DG +include_path=..\\Source,.\\ " + BUILDDIR + "/auto.inf intermediates/output.ulx"
+end
+
 CLEAN.include('intermediates/')
 CLOBBER.include('intermediates/', 'out/')
 
-task :default => [:ni]
+task :default => [:i6]
