@@ -13,6 +13,7 @@ WIN_I7_BASE = "\"D:/Program Files (x86)/Inform 7"
 WIN_I7_INTERNAL = WIN_I7_BASE + "/Internal\""
 WIN_NI = WIN_I7_BASE + "/Compilers/ni\""
 WIN_I6 = WIN_I7_BASE + "/Compilers/inform6\""
+WIN_CBLORB = WIN_I7_BASE + "/Compilers/cBlorb\""
 
 directory 'intermediates'
 directory MATERIALDIR
@@ -45,10 +46,15 @@ task :ni => [INDEXDIR, MATERIALDIR, STORY_NI] do
 end
 
 task :i6 => :ni do
-  sh WIN_I6 + " -w~S~DG +include_path=..\\Source,.\\ " + BUILDDIR + "/auto.inf intermediates/output.ulx"
+  sh WIN_I6 + " -w~S~DG +include_path=..\\Source,.\\ " + BUILDDIR + "/auto.inf intermediates/TheNewMapmaker.inform/Build/output.ulx"
 end
+
+task :cBlorb => :i6 do
+  sh WIN_CBLORB + " " + INFORMDIR + "/Release.blurb -windows " + BUILDDIR + "\output.gblorb"
+end
+
 
 CLEAN.include('intermediates/')
 CLOBBER.include('intermediates/', 'out/')
 
-task :default => [:i6]
+task :default => [:cBlorb]
