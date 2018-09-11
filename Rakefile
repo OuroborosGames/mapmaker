@@ -1,11 +1,16 @@
 require 'erb'
 require 'rake/clean'
 
+# TODO: Don't hardcode compiler paths
+
 INFORMDIR = 'intermediates/TheNewMapmaker.inform'
 MATERIALDIR = 'intermediates/TheNewMapmaker.materials'
+
 BUILDDIR = INFORMDIR + '/Build'
 SOURCEDIR = INFORMDIR + '/Source'
 INDEXDIR = INFORMDIR + '/Index'
+
+RELEASEDIR = MATERIALDIR + '/Release'
 
 STORY_NI = INFORMDIR + '/Source/story.ni'
 METADATA_FILE = INFORMDIR + '/Metadata.iFiction'
@@ -18,6 +23,7 @@ WIN_I6 = WIN_I7_BASE + "/Compilers/inform6\""
 WIN_CBLORB = WIN_I7_BASE + "/Compilers/cBlorb\""
 
 directory 'intermediates'
+directory 'out'
 directory MATERIALDIR
 directory INFORMDIR
 directory BUILDDIR
@@ -62,8 +68,9 @@ task :ifid => :ni do
   File.write(RELEASE_FILE, rel)
 end
 
-task :cBlorb => [:i6, :ifid] do
+task :cBlorb => [:i6, :ifid, 'out'] do
   sh WIN_CBLORB + " " + INFORMDIR + "/Release.blurb -windows " + BUILDDIR + "\output.gblorb"
+  FileUtils.cp_r RELEASEDIR + '/.', 'out'
 end
 
 
